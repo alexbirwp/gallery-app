@@ -3,7 +3,7 @@ import GalleyListItem from "./GalleyListItem";
 
 const GalleyListGroup = ({items = [], title}) => {
     return (
-        <section className="gallery-group">
+        <section className="mb-5">
             <h3>{title}</h3>
             <Row>
                 {items.map(item => 

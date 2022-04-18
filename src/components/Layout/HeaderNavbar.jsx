@@ -4,7 +4,7 @@ import MainMenu from "./MainMenu";
 
 const HeaderNavbar = ({children}) => {
     return (
-    <Navbar bg="light" expand={false}>
+    <Navbar bg="light" expand={false} fixed="top">
         <Container>
             <LinkContainer to="/">
                 <Navbar.Brand>Галлерея изображений</Navbar.Brand>

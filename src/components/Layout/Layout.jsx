@@ -6,7 +6,7 @@ const Layout = ({children}) => {
         <>
             <HeaderNavbar />
             <main>
-                <Container className="pt-10">
+                <Container className="mt-5 pt-5">
                     {children}
                 </Container>
             </main>

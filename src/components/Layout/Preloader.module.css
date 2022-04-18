@@ -1,0 +1,7 @@
+.preloader svg{
+    max-width: 100%;
+    display: block;
+    width: 100px;
+    height: auto;
+    margin: auto;
+}

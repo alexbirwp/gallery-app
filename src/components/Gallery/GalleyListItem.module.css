@@ -1,0 +1,10 @@
+.custom-card .custom-overlay{
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s;
+}
+.custom-card:hover .custom-overlay {
+   visibility: visible; 
+   opacity: 1;
+}
