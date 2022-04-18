@@ -1,10 +1,10 @@
 import { Card} from 'react-bootstrap';
 import avatar from '../../assets/img/avatar.jpeg';
 
-const AboutMeSection = () => {
+const AboutMeSection = ({className}) => {
     return (
         
-            <Card>
+            <Card className={className}>
                 <Card.Img 
                 variant="top" 
                 src={avatar} />

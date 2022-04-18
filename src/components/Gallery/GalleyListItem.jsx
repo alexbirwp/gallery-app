@@ -6,7 +6,7 @@ const GalleyListItem = ({item}) => {
     const {thumbnailUrl, id} = item;
     const imgOverlayClassName = `${styles['custom-overlay']} justify-content-center align-items-center`;
     return  (
-        <Col md={4} lg={2} className="mb-4">
+        <Col xs={6} md={4} lg={2} className="mb-4">
             <Card className={styles['custom-card']}>
                 <Card.Img 
                 src={thumbnailUrl} />
