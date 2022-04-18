@@ -1,8 +1,18 @@
+import { useEffect, useState } from "react";
+import { getGalleryGroups } from "../api/galleryApi";
+import GalleyList from "../components/Gallery/GalleryList";
 
 const Gallery = () => {
-    return <div>
-        <h1>Привет</h1>
-    </div>
+    const [groups, setGroups] = useState([]);    
+    useEffect(() => {
+        getGalleryGroups().then(setGroups)
+    }, [])
+    return (
+        <>
+        <h1>Галлерея</h1>
+        <GalleyList groups={groups}/>
+        </>
+    )
 };
 
 
