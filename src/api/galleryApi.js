@@ -25,3 +25,9 @@ export async function getGalleryGroups() {
     }
     return groups;
 }
+
+export async function getGalleryItem(id) {
+    const url = `${BASE_URL}/${id}`;
+    const { data } = await axios.get(url);
+    return data;
+}

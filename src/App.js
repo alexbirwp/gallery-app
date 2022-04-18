@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Gallery />} />
           <Route path="/about" element={<About />} />
-          <Route path="/:id" element={<PhotoDetails />} />
+          <Route path=":id" element={<PhotoDetails />} />
         </Routes>
       </Layout>
     </BrowserRouter>

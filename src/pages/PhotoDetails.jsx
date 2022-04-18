@@ -1,8 +1,19 @@
+import { Button } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import { useParams } from "react-router-dom";
+import { getGalleryItem } from "../api/galleryApi";
 
 const PhotoDetails = () => {
-    return <div>
-        <h1>Деталка</h1>
-    </div>
+    const params = useParams();
+    getGalleryItem(params.id)
+    return (
+        <>
+        <LinkContainer to='/'>
+            <Button>Назад</Button>
+        </LinkContainer>
+        <h1>{params.id}</h1>
+        </>
+    )
 };
 
 

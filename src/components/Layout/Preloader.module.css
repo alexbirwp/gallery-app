@@ -1,7 +1,11 @@
+.preloader {
+    min-height: calc(100vh - 56px - 6rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .preloader svg{
     max-width: 100%;
     display: block;
     width: 100px;
-    height: auto;
-    margin: auto;
 }
