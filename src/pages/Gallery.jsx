@@ -1,24 +1,22 @@
-import { useEffect, useState } from "react";
-import { getGalleryGroups } from "../api/galleryApi";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import GalleyList from "../components/Gallery/GalleryList";
 import Preloader from "../components/Layout/Preloader";
+import { fetchGroups } from "../store/groupsReduser";
 
 const Gallery = () => {
-    const [groups, setGroups] = useState([]);   
-    const [isLoading, setIsLoading] = useState(true) 
+    const {groups = [], loading} = useSelector(state => {
+        return state.groups
+    });
+    const dispatch = useDispatch()
     useEffect(() => {
-        getGalleryGroups().then(data => {
-            setTimeout(() => {
-                setGroups(data);
-                setIsLoading(false);
-            }, 500)
-        })
-    }, [])
+        loading && dispatch(fetchGroups())
+    }, [dispatch, loading])
     return (
         <>
         <h1>Галлерея</h1>
-        {isLoading && <Preloader />}
-        {!isLoading && <GalleyList groups={groups}/>}
+        {loading && <Preloader />}
+        {!loading && <GalleyList groups={groups}/>}
         </>
     )
 };

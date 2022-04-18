@@ -5,11 +5,10 @@ const BASE_URL = 'https://jsonplaceholder.typicode.com/photos';
 export async function getGalleryGroups() {
     const groupsSize = 4;
     const groupSize = 6;
-
-    const {data : items} = await axios.get(BASE_URL);
+    const {data : items} = await axios.get(`${BASE_URL}?_limit=${groupsSize * groupSize}`);
     const groups = [];
     let currentGroupIndex = 0;
-    for (let i = 0; i < groupsSize * groupSize; i++) {
+    for (let i = 0; i < items.length; i++) {
         const item = items[i];
         if(!groups[currentGroupIndex]) {
             groups[currentGroupIndex] = {
@@ -26,8 +25,10 @@ export async function getGalleryGroups() {
     return groups;
 }
 
-export async function getGalleryItem(id) {
-    const url = `${BASE_URL}/${id}`;
-    const { data } = await axios.get(url);
-    return data;
+export function getGalleryItem(id) {
+    return async () => {
+        const url = `${BASE_URL}/${id}`;
+        const { data } = await axios.get(url);
+        return data;
+    }
 }
