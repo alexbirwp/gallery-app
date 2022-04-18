@@ -1,12 +1,13 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
 import { getGalleryItem } from '../api/galleryApi';
 import { FETCH_ITEM, setItem } from '../store/itemReduser';
+import { delay } from './groupsSaga';
 
 
-function* itemWorker(id) {
-    const item = yield call(getGalleryItem(id));
-    yield setTimeout(() => null, 500);
-    yield put(setItem(setItem(item)));
+function* itemWorker({payload}) {
+    const item = yield call(getGalleryItem(payload));
+    yield delay(500);
+    yield put(setItem(item));
 
 }
 

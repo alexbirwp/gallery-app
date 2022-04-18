@@ -8,6 +8,7 @@ const Gallery = () => {
     const {groups = [], loading} = useSelector(state => {
         return state.groups
     });
+    console.log(loading)
     const dispatch = useDispatch()
     useEffect(() => {
         loading && dispatch(fetchGroups())
